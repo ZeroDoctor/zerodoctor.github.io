@@ -1,0 +1,375 @@
+
+/**
+	color theme:
+		#21272d - darkmetal
+        #2A323A - Gunmetal
+        #986E7A - Bazaar
+        #BB8D8B - Rosy Brown
+        #D0B394 - Tan
+        #A99C8F - Grullo
+*/
+
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css);
+
+$darkmetal: #21272d;
+$gunmetal: #2A323A;
+$bazaar: #986E7A;
+$rosybrown: #BB8D8B;
+$tan: #D0B394;
+$grullo: #A99C8F;
+
+h1, h3, p {
+    font-family: 'Fira Code', monospace;
+}
+
+body {
+	background-color: $gunmetal;
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+}
+
+.hero {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: $gunmetal;
+    position: relative;
+}
+
+.hero-info {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.hero-inner {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+
+    //-webkit-flex-flow: column wrap;
+    //flex-flow: column wrap;
+    flex-direction: row;
+    z-index: 2;
+}
+
+.intro {
+    max-width: 60%;
+    max-height: 95%;
+    padding: 0 0% 0 2%;
+    flex-grow: 2;
+    font-size: 1.2vw;
+
+    h1 {
+        color: $bazaar;
+    }
+    p {
+        color: $rosybrown;
+    }
+}
+
+.profile {
+    flex-grow: 1;
+    max-width: 40%;
+    max-height: 100%;
+    padding-left: 3%;
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        //height: 496px;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* top | right | bottom | left */
+    padding: 5px 5% 0px 5%;
+    max-width: 100%;
+	max-height: 20%;
+
+    h3 a {
+        text-decoration: none;
+        color: $tan;
+    }
+	z-index: 2;
+	overflow: auto;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.hamburger {
+	padding: 2% 5% 0px 5%;
+	width: 1.5rem;
+	height: .7rem;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.hamburger > span {
+	display: block;
+	background-color: $grullo;
+	height: 25%;
+	margin-bottom: 20%;
+}
+
+.nav {
+    list-style: none;
+    margin: 0;
+    
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    
+    -webkit-flex-flow: row wrap;
+    flex-direction: row wrap;
+	justify-content: flex-end;
+}
+  
+.nav a {
+	text-decoration: none;
+	font-size: 100%;
+    font-family: 'Fira Code', monospace;
+    display: block;
+    padding: 1em;
+    color: $tan;
+}
+
+.btn {
+	background-color:transparent;
+	border-radius:0.8vw;
+    border:0.15vw solid $rosybrown;
+	display:inline-block;
+	cursor:pointer;
+	color:$rosybrown;
+	font-family:Arial;
+	font-weight:bold;
+	padding: 1vw 2.5vw;
+	text-decoration:none;
+}
+.btn:hover {
+	background-color:transparent;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+.canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute; 
+    
+    z-index: 1;
+}
+
+.resume {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	padding-top: 45px;
+	overflow: hidden;
+	background-color: $darkmetal;
+}
+
+.paragraph {
+
+	.title {
+		width: 70%;
+		padding-left: 15%;
+	}
+
+	h2 {
+		font-family: 'Fira Code', monospace;
+		padding-top: 15px;
+		
+		text-align: center;
+		border-bottom: 1px solid $rosybrown;
+		color: $rosybrown;
+		line-height: 0.1em;
+		margin: 10px 0 20px;
+	}
+
+	h2 span {
+		background: $darkmetal;
+		padding: 0 10px;
+	}
+
+	p {
+		color: $tan;
+		font-family: 'Fira Code', monospace;
+		font-size: 1.4vw;
+		padding-left: 20%;
+		width: 60%;
+	}
+}
+
+.gallery-content {
+	padding-left: 15%;
+	width: 70%;
+}
+
+.gallery {
+	display: grid;
+	max-width: 100%;
+	max-height: 100%;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	grid-gap: 1.0rem;
+}
+
+.gallery_img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+  
+@media all and (max-width: 1000px) {
+    .hero-inner {
+        -webkit-flex-direction: column;
+		flex-direction: column;
+        padding: 0px;
+    }
+
+    .intro {
+		max-width: 90%;
+		padding: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.content {
+		padding-top: 25%;
+		font-size: 16px;
+	}
+
+    .profile {
+		padding: 0px;
+		width: 0px;
+		height: 0px;
+		visibility: hidden;
+    }
+
+    .nav {
+        justify-content: space-around;
+    }
+}
+
+@media all and (max-width: 600px) {
+	.nav {
+		-webkit-flex-flow: column wrap;
+		flex-flow: column wrap;
+		padding: 0;
+	}
+
+	.nav a {
+		text-align: center;
+		padding: 10px;
+		border-top: 1px solid rgba(255, 255, 255, 0.3);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	}
+
+	.nav li:last-of-type a {
+		border-bottom: none;
+	}
+}
+
+
+// For the Push Navigation
+nav {
+	background-color: $gunmetal;
+	position: fixed;
+	height: 100%;
+	width: 65%;
+}
+
+nav::before {
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 100%;
+	vertical-align: middle;
+}
+
+nav > ul {
+	width: 80%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+nav > ul > li {
+	display: block;
+	text-transform: uppercase;
+	line-height: 3;
+	font-size: 1rem;
+	padding-left: 30%;
+
+	a {
+		color: $grullo;
+		text-decoration: none;
+		font-size: 2.3vw;
+		font-family: 'Fira Code',
+		monospace;
+	}
+}
+
+@media screen and (orientation: portrait) {
+	.container {
+		padding: 4rem 1rem;
+	}
+}
+
+.container > p {
+	padding-bottom: 1em;
+}
+
+.container {
+	background-color: $gunmetal;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0px;
+	overflow: auto;
+	transition: .2s ease;
+}
+
+@media screen and (orientation: portrait) {
+	nav.active + .container {
+		transform: translateX(55%) scale(0.8);
+		box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3);
+	}
+}
+
+@media screen and (orientation: landscape) {
+	nav.active + .container {
+		transform: translateX(35%) scale(0.8);
+		box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3);
+	}
+}
