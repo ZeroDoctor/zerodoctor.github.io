@@ -1,0 +1,69 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css);
+
+$darkmetal: #21272d;
+$gunmetal: #2A323A;
+$bazaar: #986E7A;
+$rosybrown: #BB8D8B;
+$tan: #D0B394;
+$grullo: #A99C8F;
+
+// For the Push Navigation
+nav {
+	background-color: $gunmetal;
+	position: fixed;
+	height: 100%;
+	width: 65%;
+}
+
+nav::before {
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 100%;
+	vertical-align: middle;
+}
+
+nav>ul {
+	width: 80%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+nav>ul>li {
+	display: block;
+	text-transform: uppercase;
+	line-height: 3;
+	font-size: 2rem;
+	padding-left: 30%;
+
+	a {
+		color: $grullo;
+		text-decoration: none;
+		font-size: 4.3vw;
+		font-family: 'Fira Code',
+			monospace;
+	}
+}
+
+@media screen and (orientation: portrait) {
+	.container {
+		padding: 4rem 1rem;
+	}
+}
+
+.container>p {
+	padding-bottom: 1em;
+}
+
+.container {
+	background-color: $gunmetal;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0px;
+	overflow: auto;
+	max-width: 100%;
+	transition: .2s ease;
+}

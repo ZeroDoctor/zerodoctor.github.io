@@ -236,6 +236,10 @@ body {
 		justify-content: center;
 		width: 60%;
 		padding-left: 20%;
+		P {
+			padding-left: 15px;
+			width: auto;
+		}
 	}
 
 	h2 {
@@ -256,6 +260,11 @@ body {
 	h2 span {
 		background: $darkmetal;
 		padding: 0 10px;
+	}
+
+	a, i {
+		color: $rosybrown;
+		text-decoration: none;
 	}
 
 	p {
@@ -284,6 +293,32 @@ body {
 	height: 100%;
 	object-fit: cover;
 	display: block;
+}
+
+@media screen and (orientation: portrait) {
+	nav.active+.container {
+		transform: translateX(55%) scale(0.8);
+		box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3);
+	}
+}
+
+@media screen and (orientation: landscape) {
+	nav.active+.container {
+		transform: translateX(35%) scale(0.8);
+		box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3);
+	}
+}
+
+.footer {
+	width: 100%;
+	height: auto;
+	margin-top: 2%;
+	background-color: #1d2227;
+	h5 {
+		padding-left: 20px;
+		font-family: 'Fira Code', monospace;
+		color: $bazaar;
+	}
 }
 
 // for desktop  
@@ -322,14 +357,12 @@ body {
 			width: 60%;
 		}
 
-		h3 {
-			padding-right: 5%;
-		}
-
 		.center {
 			width: 70%;
 			padding-left: 15%;
 			flex-direction: row;
+			align-content: center;
+			align-items: center;
 			font-size: 1.25vw;
 		}
 
@@ -432,80 +465,18 @@ body {
 		height: 20%;
 		margin-bottom: 20%;
 	}
-}
 
-
-// For the Push Navigation
-nav {
-	background-color: $gunmetal;
-	position: fixed;
-	height: 100%;
-	width: 65%;
-}
-
-nav::before {
-	content: '';
-	display: inline-block;
-	width: 0;
-	height: 100%;
-	vertical-align: middle;
-}
-
-nav > ul {
-	width: 80%;
-	display: inline-block;
-	vertical-align: middle;
-}
-
-nav > ul > li {
-	display: block;
-	text-transform: uppercase;
-	line-height: 3;
-	font-size: 1rem;
-	padding-left: 30%;
-
-	a {
-		color: $grullo;
-		text-decoration: none;
-		font-size: 2.3vw;
-		font-family: 'Fira Code',
-		monospace;
+	.paragraph {
+		a {
+			padding-left: 2%;
+			width: 30%;
+			height: 30%;
+		}
 	}
-}
 
-@media screen and (orientation: portrait) {
-	.container {
-		padding: 4rem 1rem;
-	}
-}
-
-.container > p {
-	padding-bottom: 1em;
-}
-
-.container {
-	background-color: $gunmetal;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	padding: 0px;
-	overflow: auto;
-	max-width: 100%;
-	transition: .2s ease;
-}
-
-@media screen and (orientation: portrait) {
-	nav.active + .container {
-		transform: translateX(55%) scale(0.8);
-		box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3);
-	}
-}
-
-@media screen and (orientation: landscape) {
-	nav.active + .container {
-		transform: translateX(35%) scale(0.8);
-		box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3);
+	nav>ul>li {
+		a {
+			font-size: 2.3vw;
+		}
 	}
 }
