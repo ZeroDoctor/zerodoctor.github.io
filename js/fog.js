@@ -33,7 +33,25 @@ function initFog() {
         alert("WebGL isn't available");
         
         return;
-    }
+	}
+	
+	if (!window.requestAnimationFrame) {
+
+		window.requestAnimationFrame = (function () {
+
+			return window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				window.oRequestAnimationFrame ||
+				window.msRequestAnimationFrame ||
+				function (callback, element) {
+
+					window.setTimeout(callback, 1000 / 60);
+
+				};
+
+		})();
+
+	}
     
 	// Four Vertices
 	var vertices = [
@@ -83,7 +101,6 @@ function initFog() {
 	var vPosition = gl.getAttribLocation(program, "vPosition");
 	gl.vertexAttribPointer(vPosition, 2, gl.FLOAT, false, 0, 0);
 	gl.enableVertexAttribArray(vPosition);
-
 
 	render();
 };

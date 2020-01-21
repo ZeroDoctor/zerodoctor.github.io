@@ -42,7 +42,7 @@ function onWrap(event) {
 }
 
 function onResize(event) {
-	if(window.innerWidth < 1000 && !isMobile) {
+	if(window.innerWidth < 800 && !isMobile) {
 		isMobile = this.convertDesktop();
 	}
 }
@@ -58,7 +58,7 @@ window.onload = function init() {
 	var wrapper = document.getElementById("wrapper");
 
 	if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-		window.innerWidth < 1000) && !this.isMobile) {
+		window.innerWidth < 800) && !this.isMobile) {
 		isMobile = this.convertDesktop(ham);
 	}
 
