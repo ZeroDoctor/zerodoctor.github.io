@@ -3,6 +3,7 @@ var points;
 var _lastTimestamp = 0;
 var loc_time;
 var speed = 0.0;
+var canvas;
 
 function getRelativeMousePosition(event, target) {
     target = target || event.target;
@@ -25,33 +26,27 @@ function getCanvasMousePosition(event, target) {
     return pos;  
 }
 
+function resizeCanvas() {
+	var width = canvas.clientWidth;
+	var height = canvas.clientHeight;
+	if(canvas.width != width || canvas.height != height) {
+		canvas.width = width;
+		canvas.height = height;
+	}
+	
+	gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+}
+
 function initFog() {
-	var canvas = document.getElementById("gl-canvas");
+	canvas = document.getElementById("gl-canvas");
 
 	gl = WebGLUtils.setupWebGL(canvas);
 	if (!gl) {
         alert("WebGL isn't available");
-        
         return;
 	}
-	
-	if (!window.requestAnimationFrame) {
 
-		window.requestAnimationFrame = (function () {
-
-			return window.webkitRequestAnimationFrame ||
-				window.mozRequestAnimationFrame ||
-				window.oRequestAnimationFrame ||
-				window.msRequestAnimationFrame ||
-				function (callback, element) {
-
-					window.setTimeout(callback, 1000 / 60);
-
-				};
-
-		})();
-
-	}
+	gl.getExtension('OES_standard_derivatives');
     
 	// Four Vertices
 	var vertices = [
@@ -64,7 +59,7 @@ function initFog() {
 	//
 	//  Configure WebGL
 	//
-	gl.viewport(0, 0, canvas.width, canvas.height);
+	resizeCanvas();
 	gl.clearColor(1.0, 0.0, 0.0, 1.0);
 
 	//  Load shaders and initialize attribute buffers
@@ -74,7 +69,7 @@ function initFog() {
 	loc_time = gl.getUniformLocation(program, "u_time");
 	var loc_mouse = gl.getUniformLocation(program, "u_mouse");
 	var loc_resolution = gl.getUniformLocation(program, "u_resolution");
-    gl.uniform2fv(loc_resolution, [300, 300]);
+    gl.uniform2fv(loc_resolution, [gl.canvas.width, gl.canvas.height]);
     
     // since canvas is behind other elements, add event listener to 'window' is nessary
     window.addEventListener('mousemove', e => {
@@ -89,7 +84,12 @@ function initFog() {
             // this.console.log(x + ', ' + y);
             gl.uniform2fv(loc_mouse, [x, y]);
         }
-    });
+	});
+	
+	window.addEventListener('resize', e => {
+		resizeCanvas();
+
+	})
 
 	// Load the data into the GPU
 	var bufferId = gl.createBuffer();
