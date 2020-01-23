@@ -9,16 +9,9 @@
         #A99C8F - Grullo
 */
 
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css);
+@import 'nav';
 
-$darkmetal: #21272d;
-$gunmetal: #2A323A;
-$bazaar: #986E7A;
-$rosybrown: #BB8D8B;
-$tan: #D0B394;
-$grullo: #A99C8F;
-
-h1, h3, p {
+h1, h2, h3, h4, h5, a, p {
     font-family: 'Fira Code', monospace;
 }
 
@@ -152,7 +145,6 @@ body {
 .nav a {
 	text-decoration: none;
 	font-size: 100%;
-    font-family: 'Fira Code', monospace;
     display: block;
     padding: 1em;
     color: $tan;
@@ -165,7 +157,6 @@ body {
 	display:inline-block;
 	cursor:pointer;
 	color:$rosybrown;
-	font-family: 'Fira Code', monospace;
 	font-size:larger;
 	font-weight:bold;
 	padding: 3vw 4.5vw;
@@ -183,8 +174,6 @@ body {
 	display:inline-block;
 	cursor:pointer;
 	color:$rosybrown;
-	font-family: 'Fira Code',
-	monospace;
 	font-size:2.7vw;
 	font-weight:bold;
 	padding: 2vw 3.5vw;
@@ -222,7 +211,6 @@ body {
 .paragraph {
 
 	font-size: 3.4vw;
-	font-family: 'Fira Code', monospace;
 	padding-bottom: 15px;
 
 	.title {
@@ -275,17 +263,17 @@ body {
 }
 
 .gallery-content {
-	padding-left: 15%;
-	width: 70%;
+	padding-left: 5%;
+	width: 90%;
 }
 
 .gallery {
 	display: grid;
 	max-width: 100%;
 	max-height: 100%;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	grid-gap: 1.0rem;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-gap: 0.1rem;
 }
 
 .gallery_img {
@@ -316,7 +304,6 @@ body {
 	background-color: #1d2227;
 	h5 {
 		padding-left: 20px;
-		font-family: 'Fira Code', monospace;
 		color: $bazaar;
 	}
 }
@@ -344,7 +331,7 @@ body {
 	}
 
 	.paragraph {
-		font-size: 1vw;
+		font-size: 1.3vw;
 
 		.title {
 			width: 70%;
@@ -478,5 +465,19 @@ body {
 		a {
 			font-size: 2.3vw;
 		}
+	}
+
+	.gallery-content {
+		padding-left: 15%;
+		width: 70%;
+	}
+
+	.gallery {
+		display: grid;
+		max-width: 100%;
+		max-height: 100%;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-gap: 1.0rem;
 	}
 }

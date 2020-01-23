@@ -1,6 +1,6 @@
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css);
 nav {
-  background-color: #2A323A;
+  background-color: #2a323a;
   position: fixed;
   height: 100%;
   width: 65%;
@@ -46,7 +46,7 @@ nav > ul > li a {
 }
 
 .container {
-  background-color: #2A323A;
+  background-color: #2a323a;
   position: fixed;
   top: 0;
   left: 0;

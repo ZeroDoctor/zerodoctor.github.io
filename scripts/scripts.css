@@ -8,7 +8,67 @@
         #A99C8F - Grullo
 */
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css);
-h1, h3, p {
+nav {
+  background-color: #2A323A;
+  position: fixed;
+  height: 100%;
+  width: 65%;
+}
+
+nav::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+}
+
+nav > ul {
+  width: 80%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+nav > ul > li {
+  display: block;
+  text-transform: uppercase;
+  line-height: 3;
+  font-size: 2rem;
+  padding-left: 30%;
+}
+
+nav > ul > li a {
+  color: #A99C8F;
+  text-decoration: none;
+  font-size: 4.3vw;
+  font-family: 'Fira Code', monospace;
+}
+
+@media screen and (orientation: portrait) {
+  .container {
+    padding: 4rem 1rem;
+  }
+}
+
+.container > p {
+  padding-bottom: 1em;
+}
+
+.container {
+  background-color: #2A323A;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0px;
+  overflow: auto;
+  max-width: 100%;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+
+h1, h2, h3, h4, h5, a, p {
   font-family: 'Fira Code', monospace;
 }
 
@@ -164,7 +224,6 @@ body {
 .nav a {
   text-decoration: none;
   font-size: 100%;
-  font-family: 'Fira Code', monospace;
   display: block;
   padding: 1em;
   color: #D0B394;
@@ -177,7 +236,6 @@ body {
   display: inline-block;
   cursor: pointer;
   color: #BB8D8B;
-  font-family: 'Fira Code', monospace;
   font-size: larger;
   font-weight: bold;
   padding: 3vw 4.5vw;
@@ -195,7 +253,6 @@ body {
   display: inline-block;
   cursor: pointer;
   color: #BB8D8B;
-  font-family: 'Fira Code', monospace;
   font-size: 2.7vw;
   font-weight: bold;
   padding: 2vw 3.5vw;
@@ -237,7 +294,6 @@ body {
 
 .paragraph {
   font-size: 3.4vw;
-  font-family: 'Fira Code', monospace;
   padding-bottom: 15px;
 }
 
@@ -296,8 +352,8 @@ body {
 }
 
 .gallery-content {
-  padding-left: 15%;
-  width: 70%;
+  padding-left: 5%;
+  width: 90%;
 }
 
 .gallery {
@@ -305,11 +361,11 @@ body {
   display: grid;
   max-width: 100%;
   max-height: 100%;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
-  grid-gap: 1.0rem;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  grid-gap: 0.1rem;
 }
 
 .gallery_img {
@@ -347,7 +403,6 @@ body {
 
 .footer h5 {
   padding-left: 20px;
-  font-family: 'Fira Code', monospace;
   color: #986E7A;
 }
 
@@ -377,7 +432,7 @@ body {
     font-size: 1vw;
   }
   .paragraph {
-    font-size: 1vw;
+    font-size: 1.3vw;
   }
   .paragraph .title {
     width: 70%;
@@ -501,6 +556,21 @@ body {
   }
   nav > ul > li a {
     font-size: 2.3vw;
+  }
+  .gallery-content {
+    padding-left: 15%;
+    width: 70%;
+  }
+  .gallery {
+    display: -ms-grid;
+    display: grid;
+    max-width: 100%;
+    max-height: 100%;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1.0rem;
   }
 }
 /*# sourceMappingURL=scripts.css.map */
