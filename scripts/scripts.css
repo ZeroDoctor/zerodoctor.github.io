@@ -9,7 +9,7 @@
 */
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css);
 nav {
-  background-color: #2A323A;
+  background-color: #2a323a;
   position: fixed;
   height: 100%;
   width: 65%;
@@ -55,7 +55,7 @@ nav > ul > li a {
 }
 
 .container {
-  background-color: #2A323A;
+  background-color: #2a323a;
   position: fixed;
   top: 0;
   left: 0;
@@ -68,12 +68,91 @@ nav > ul > li a {
   transition: .2s ease;
 }
 
+.card {
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+  border-radius: 3px;
+  overflow: hidden;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: width 275ms 100ms, height 375ms, -webkit-transform 375ms;
+  transition: width 275ms 100ms, height 375ms, -webkit-transform 375ms;
+  transition: transform 375ms, width 275ms 100ms, height 375ms;
+  transition: transform 375ms, width 275ms 100ms, height 375ms, -webkit-transform 375ms;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/*.card:hover {
+	transform: translate(-50%, -70%);
+	width: 330px;
+	height: 330px;
+	transition: transform 375ms, width 375ms, height 275ms 100ms;
+
+}*/
+div.card-content {
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 3px;
+  background: #1b1f24;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 375ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 375ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 375ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 375ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 375ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*.card-content:hover {
+	transform: scale(1);
+}*/
+.card-img {
+  max-width: 100%;
+  max-height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-img img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card-text {
+  height: auto;
+  padding: 15px;
+}
+
+.card-text .card-line {
+  margin-top: 15px;
+}
+
+.card-title {
+  width: 80%;
+}
+
+.card-title h5 {
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+}
+
+/*.card-subtitle {
+	width: 100%;
+	p {
+		width: 80%;
+		padding-left: 5%;
+	}
+}*/
 h1, h2, h3, h4, h5, a, p {
   font-family: 'Fira Code', monospace;
 }
 
 body {
-  background-color: #2A323A;
+  background-color: #2a323a;
   margin: 0px;
   padding: 0px;
 }
@@ -105,7 +184,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #2A323A;
+  background-color: #2a323a;
   position: relative;
 }
 
@@ -151,7 +230,7 @@ body {
   color: #BB8D8B;
 }
 
-.content {
+.intro .content {
   font-size: 4vw;
 }
 
@@ -178,7 +257,7 @@ body {
   padding: 5px 5% 0px 5%;
   max-width: 100%;
   max-height: 20%;
-  font-size: 3vw;
+  font-size: 3.5vw;
   z-index: 2;
   overflow: auto;
 }
@@ -194,15 +273,15 @@ body {
 
 .hamburger {
   padding: 5% 5% 0px 5%;
-  width: 2.5rem;
-  height: .7rem;
+  width: 3.5rem;
+  height: 0.8rem;
   z-index: 2;
   cursor: pointer;
 }
 
 .hamburger > span {
   display: block;
-  background-color: #A99C8F;
+  background-color: #D0B394;
   height: 50%;
   margin-bottom: 20%;
 }
@@ -353,7 +432,19 @@ body {
 
 .gallery-content {
   padding-left: 5%;
-  width: 90%;
+  max-width: 90%;
+  max-height: 100%;
+}
+
+figure {
+  -webkit-margin-before: 0.25em;
+          margin-block-start: 0.25em;
+  -webkit-margin-after: 0.25em;
+          margin-block-end: 0.25em;
+  -webkit-margin-start: 5px;
+          margin-inline-start: 5px;
+  -webkit-margin-end: 5px;
+          margin-inline-end: 5px;
 }
 
 .gallery {
@@ -398,7 +489,7 @@ body {
   width: 100%;
   height: auto;
   margin-top: 2%;
-  background-color: #1d2227;
+  background-color: #1b1f24;
 }
 
 .footer h5 {
@@ -469,7 +560,7 @@ body {
             flex-grow: 2;
     font-size: 1.2vw;
   }
-  .content {
+  .intro .content {
     padding-top: 0px;
     font-size: 1.2vw;
   }
@@ -497,6 +588,10 @@ body {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+  }
+  .card:hover {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
   }
 }
 

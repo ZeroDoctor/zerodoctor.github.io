@@ -1,0 +1,80 @@
+.card {
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+  border-radius: 3px;
+  overflow: hidden;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: width 275ms 100ms, height 375ms, -webkit-transform 375ms;
+  transition: width 275ms 100ms, height 375ms, -webkit-transform 375ms;
+  transition: transform 375ms, width 275ms 100ms, height 375ms;
+  transition: transform 375ms, width 275ms 100ms, height 375ms, -webkit-transform 375ms;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/*.card:hover {
+	transform: translate(-50%, -70%);
+	width: 330px;
+	height: 330px;
+	transition: transform 375ms, width 375ms, height 275ms 100ms;
+
+}*/
+div.card-content {
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 3px;
+  background: #1b1f24;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 375ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 375ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 375ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 375ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 375ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*.card-content:hover {
+	transform: scale(1);
+}*/
+.card-img {
+  max-width: 100%;
+  max-height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-img img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card-text {
+  height: auto;
+  padding: 15px;
+}
+
+.card-text .card-line {
+  margin-top: 15px;
+}
+
+.card-title {
+  width: 80%;
+}
+
+.card-title h5 {
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+}
+
+/*.card-subtitle {
+	width: 100%;
+	p {
+		width: 80%;
+		padding-left: 5%;
+	}
+}*/
+/*# sourceMappingURL=card.css.map */

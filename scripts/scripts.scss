@@ -10,6 +10,7 @@
 */
 
 @import 'nav';
+@import 'card';
 
 h1, h2, h3, h4, h5, a, p {
     font-family: 'Fira Code', monospace;
@@ -73,11 +74,13 @@ body {
 	p {
 		color: $rosybrown;
 	}
+
+	.content {
+		font-size: 4vw;
+	}
+
 }
 
-.content {
-	font-size: 4vw;
-}
 
 .profile {
 	padding: 0px;
@@ -98,7 +101,7 @@ body {
     padding: 5px 5% 0px 5%;
     max-width: 100%;
 	max-height: 20%;
-	font-size: 3vw;
+	font-size: 3.5vw;
 
     h3 a {
         text-decoration: none;
@@ -114,15 +117,15 @@ body {
 
 .hamburger {
 	padding: 5% 5% 0px 5%;
-	width: 2.5rem;
-	height: .7rem;
+	width: 3.5rem;
+	height: 0.8rem;
 	z-index: 2;
 	cursor: pointer;
 }
 
 .hamburger > span {
 	display: block;
-	background-color: $grullo;
+	background-color: $tan;
 	height: 50%;
 	margin-bottom: 20%;
 }
@@ -264,7 +267,15 @@ body {
 
 .gallery-content {
 	padding-left: 5%;
-	width: 90%;
+	max-width: 90%;
+	max-height: 100%;
+}
+
+figure {
+	margin-block-start: 0.25em;
+	margin-block-end: 0.25em;
+	margin-inline-start: 5px;
+	margin-inline-end: 5px;
 }
 
 .gallery {
@@ -301,7 +312,7 @@ body {
 	width: 100%;
 	height: auto;
 	margin-top: 2%;
-	background-color: #1d2227;
+	background-color: #1b1f24;
 	h5 {
 		padding-left: 20px;
 		color: $bazaar;
@@ -364,11 +375,11 @@ body {
 		padding: 0 0% 0 2%;
 		flex-grow: 2;
 		font-size: 1.2vw;
-	}
 
-	.content {
-		padding-top: 0px;
-		font-size: 1.2vw;
+		.content {
+			padding-top: 0px;
+			font-size: 1.2vw;
+		}
 	}
 
 	.profile {
@@ -392,6 +403,11 @@ body {
 		-webkit-flex-flow: row wrap;
 		flex-flow: row wrap;
 		justify-content: flex-end;
+	}
+
+	.card:hover {
+		transform: scale(1.25);
+		//transition: transform 375ms, width 375ms, height 275ms 100ms;
 	}
 }
 
