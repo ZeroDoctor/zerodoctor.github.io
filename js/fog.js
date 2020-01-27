@@ -88,6 +88,7 @@ function initFog() {
 	
 	window.addEventListener('resize', e => {
 		resizeCanvas();
+		gl.uniform2fv(loc_resolution, [gl.canvas.width, gl.canvas.height]);
 
 	})
 
