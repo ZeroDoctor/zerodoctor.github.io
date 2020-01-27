@@ -116,7 +116,7 @@
                     vec3(0.24705,0.30196,0.43921), 
                     clamp(length(r.x), 0.,1.));
     
-                color /= 3.0 - abs(sin(u_time * 0.35) * 2.);
+                color /= 2.5 - abs(sin(u_time * 0.35) * 2.);
                 
     
                 gl_FragColor = vec4((1.5*f*f*f+.5*f*f+.5*f)*color, 1.0);
@@ -267,7 +267,7 @@
 						</figure>
 						<figure class="gallery_item-5">
 							<div class="gallery_img">
-							<a href="#">
+							<a href="https://github.com/ZeroDoctor/RemoteProjectController">
 								<div class="card">
 
 									<div class="card-content">
