@@ -206,6 +206,7 @@ body {
 
 .intro {
   width: 100%;
+  height: 100%;
   padding: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -498,6 +499,9 @@ figure {
 }
 
 @media only screen and (min-device-width: 768px) {
+  .hero {
+    height: 80%;
+  }
   .hero-inner {
     width: 100%;
     height: 80%;
