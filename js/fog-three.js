@@ -1,14 +1,9 @@
-
-var speed = 0.0;
-var _lastTimestamp = 0;
-
-var canvas = 0;
 var uniforms = 0;
 var renderer = 0;
 var camera = 0;
 var scene = 0;
 
-function initFog() {
+function initFogThree() {
 	canvas = document.getElementById("gl-canvas");
 
 	camera = new THREE.Camera();
@@ -66,19 +61,6 @@ function onWindowResize() {
 function animate() {
 	requestAnimationFrame(animate);
 	render();
-}
-
-function getElapsed() {
-	const time = new Date().getTime();
-	var elapsed = 0.0;
-
-	if (_lastTimestamp != 0) {
-		elapsed = (time - _lastTimestamp) / 1000.0;
-	}
-
-	_lastTimestamp = time;
-
-	return elapsed;
 }
 
 function render() {

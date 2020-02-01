@@ -51,7 +51,7 @@ function onResize(event) {
 window.onload = function init() {
 
 	this.console.log("started running...");
-	this.initFog(); // from fog-three.js
+	
 
 	ham = document.getElementById("burger");
 	nav = document.getElementById("nav"); // saving the nav
@@ -59,7 +59,10 @@ window.onload = function init() {
 
 	if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
 		window.innerWidth < 800) && !this.isMobile) {
+		this.initFog();
 		isMobile = this.convertDesktop(ham);
+	} else {
+		this.initFogThree(); // from fog-three.js
 	}
 
 	window.addEventListener('resize', onResize);
