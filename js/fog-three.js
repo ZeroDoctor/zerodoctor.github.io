@@ -3,7 +3,7 @@ var renderer = 0;
 var camera = 0;
 var scene = 0;
 
-function initFogThree() {
+function initFogTHREE() {
 	canvas = document.getElementById("gl-canvas");
 
 	camera = new THREE.Camera();
@@ -21,7 +21,7 @@ function initFogThree() {
 
 	var material = new THREE.ShaderMaterial({
 		uniforms: uniforms,
-		vertexShader: document.getElementById('vertex-shader').textContent,
+		vertexShader: document.getElementById('desktop-vert-shader').textContent,
 		fragmentShader: document.getElementById('fragment-shader').textContent
 	});
 
@@ -60,10 +60,10 @@ function onWindowResize() {
 
 function animate() {
 	requestAnimationFrame(animate);
-	render();
+	renderDesktop();
 }
 
-function render() {
+function renderDesktop() {
 	uniforms.u_time.value += (getElapsed());
 	renderer.render(scene, camera);
 }

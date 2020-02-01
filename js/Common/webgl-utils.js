@@ -70,7 +70,7 @@ WebGLUtils = function () {
 			'<table style="background-color: #8CE; width: 100%; height: 100%;"><tr>' +
 			'<td align="center">' +
 			'<div style="display: table-cell; vertical-align: middle;">' +
-			'<div style="">' + msg + '</div>' +
+			'<div style=""> <p style="font-size:3.5vw;">' + msg + ' </p></div>' +
 			'</div>' +
 			'</td></tr></table>';
 	};
@@ -88,7 +88,7 @@ WebGLUtils = function () {
 	 * @type {string}
 	 */
 	var OTHER_PROBLEM = '' +
-		"It doesn't appear your computer can support WebGL.<br/>" +
+		"It doesn't appear your device can support WebGL.<br/>" +
 		'<a href="http://get.webgl.org/troubleshooting/">Click here for more information.</a>';
 
 	/**
@@ -132,8 +132,10 @@ WebGLUtils = function () {
 		var context = null;
 		for (var ii = 0; ii < names.length; ++ii) {
 			try {
-				context = canvas.getContext(names[ii], opt_attribs);
-			} catch (e) {}
+				context = canvas.getContext(names[ii]);
+			} catch (e) {
+				console.log(e);
+			}
 			if (context) {
 				break;
 			}

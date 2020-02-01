@@ -3,7 +3,7 @@ var points;
 var _lastTimestamp = 0;
 var loc_time;
 var speed = 0.0;
-var canvas;
+var canvas = 0;
 
 function getRelativeMousePosition(event, target) {
     target = target || event.target;
@@ -38,7 +38,9 @@ function resizeCanvas() {
 }
 
 function initFog() {
-	canvas = document.getElementById("gl-canvas");
+	var container = document.getElementById("gl-canvas");
+	var canvas = document.createElement("canvas");
+	container.appendChild(canvas);
 
 	gl = WebGLUtils.setupWebGL(canvas);
 	if (!gl) {
@@ -63,7 +65,7 @@ function initFog() {
 	gl.clearColor(1.0, 0.0, 0.0, 1.0);
 
 	//  Load shaders and initialize attribute buffers
-	var program = initShaders(gl, "vertex-shader", "fragment-shader");
+	var program = initShaders(gl, "mobile-vert-shader", "fragment-shader");
 	gl.useProgram(program);
 
 	loc_time = gl.getUniformLocation(program, "u_time");
@@ -107,16 +109,16 @@ function initFog() {
 };
 
 function getElapsed() {
-    const time = new Date().getTime();
-    var elapsed = 0.0;
+	const time = new Date().getTime();
+	var elapsed = 0.0;
 
-    if(_lastTimestamp != 0) {
-        elapsed = (time - _lastTimestamp) / 1000.0;
-    }
+	if (_lastTimestamp != 0) {
+		elapsed = (time - _lastTimestamp) / 1000.0;
+	}
 
-    _lastTimestamp = time;
+	_lastTimestamp = time;
 
-    return elapsed;
+	return elapsed;
 }
 
 function render() {

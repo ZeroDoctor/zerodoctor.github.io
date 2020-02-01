@@ -59,10 +59,10 @@ window.onload = function init() {
 
 	if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
 		window.innerWidth < 800) && !this.isMobile) {
-		this.initFog();
+		initFog();
 		isMobile = this.convertDesktop(ham);
 	} else {
-		this.initFogThree(); // from fog-three.js
+		initFogTHREE(); // from fog-three.js
 	}
 
 	window.addEventListener('resize', onResize);
