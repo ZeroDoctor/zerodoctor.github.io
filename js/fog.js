@@ -40,6 +40,8 @@ function resizeCanvas() {
 function initFog() {
 	var container = document.getElementById("gl-canvas");
 	var canvas = document.createElement("canvas");
+	canvas.setAttribute("width", "300");
+	canvas.setAttribute("height", "250");
 	container.appendChild(canvas);
 
 	gl = WebGLUtils.setupWebGL(canvas);
