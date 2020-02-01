@@ -5,12 +5,14 @@
 		<link rel="stylesheet" type="text/css" href="scripts/scripts.css"/>
 
 		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js"></script>
 		
         <script id="vertex-shader" type="x-shader/x-vertex">
-            attribute vec4 vPosition;
+            //attribute vec4 vPosition;
     
             void main(void) {
-                gl_Position = vPosition;
+				//gl_Position = vPosition;
+				gl_Position = vec4(position, 1.0);
             }
         </script>
         <script id="fragment-shader" type="x-shader/x-fragment">
@@ -86,7 +88,7 @@
                 //vec2 coord = gl_FragCoord.xy * 0.1 - vec2(u_resolution.x / 2.0, u_time * 5.0);
                 //v = NOISE(coord);
     
-                vec2 st = gl_FragCoord.xy / u_resolution.xy;
+                vec2 st = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / u_resolution.y;
                 //st.x *= u_resolution.x/u_resolution.y;
     
 	            vec3 color = vec3(0.0);
@@ -136,7 +138,7 @@
 
 		<div id="wrapper" class="container">
         <div class="hero">
-            <canvas id="gl-canvas" width="300" height="250" class="canvas"> </canvas>
+            <div id="gl-canvas" class="canvas"> </div>
             <div class="hero-info">
 				<div style="position: fixed; max-width: 100%; width: 100%;"> <!-- No class needed -->
 					<div id="navbar" class="navbar">
@@ -395,7 +397,7 @@
         <script defer type="text/javascript" src="js/Common/webgl-utils.js"></script>
         <script defer type="text/javascript" src="js/Common/initShaders.js"></script>
         <script defer type="text/javascript" src="js/Common/MV.js"></script>
-		<script defer type="text/javascript" src="js/fog.js"></script>
+		<script defer type="text/javascript" src="js/fog-three.js"></script>
 		<script defer type="text/javascript" src="js/index.js"></script>
     </body>
 

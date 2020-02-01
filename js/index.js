@@ -51,7 +51,7 @@ function onResize(event) {
 window.onload = function init() {
 
 	this.console.log("started running...");
-	this.initFog();
+	this.initFog(); // from fog-three.js
 
 	ham = document.getElementById("burger");
 	nav = document.getElementById("nav"); // saving the nav
