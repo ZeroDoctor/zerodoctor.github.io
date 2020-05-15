@@ -125,7 +125,7 @@ function getElapsed() {
 
 function render() {
     drawScene(getElapsed());
-    requestAnimationFrame(render);
+    requestAnimFrame(render);
 }
 
 function drawScene(elapsed) {
