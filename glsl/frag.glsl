@@ -15,7 +15,8 @@
     having educational website about shaders
     https://thebookofshaders.com
 */
-precision lowp float;
+precision highp float;
+
 
 #define NOISE fbm
 #define NUM_NOISE_OCTAVES 6
