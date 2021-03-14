@@ -9,7 +9,6 @@ var navbar = 0;
 
 // convert desktop page to mobile page
 function convertDesktop() {
-	
 	//var container = document.getElementsByTagName("body");
 	navbar = document.getElementById("navbar");
 	navTag = document.getElementsByTagName("nav");
@@ -49,9 +48,7 @@ function onResize(event) {
 
 // driver function
 window.onload = function init() {
-
 	this.console.log("started running...");
-	
 
 	ham = document.getElementById("burger");
 	nav = document.getElementById("nav"); // saving the nav

@@ -4,6 +4,7 @@ var _lastTimestamp = 0;
 var loc_time;
 var speed = 0.0;
 var canvas = 0;
+var up = true;
 
 function getRelativeMousePosition(event, target) {
     target = target || event.target;
@@ -123,13 +124,24 @@ function getElapsed() {
 	return elapsed;
 }
 
+function getDirection(elapsed) {
+	if (up) {
+		speed += elapsed;
+		if(speed >= 45.0) up = false;
+	} else {
+		speed -= elapsed;
+		if(speed <= 0.0) up = true;
+	}
+}
+
 function render() {
     drawScene(getElapsed());
-    requestAnimationFrame(render);
+    requestAnimFrame(render);
 }
 
 function drawScene(elapsed) {
-    gl.uniform1f(loc_time, speed += elapsed);
+	gl.uniform1f(loc_time, speed);
+	getDirection(elapsed)
 
 	gl.clear(gl.COLOR_BUFFER_BIT);
     gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);

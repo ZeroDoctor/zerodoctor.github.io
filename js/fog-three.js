@@ -59,7 +59,7 @@ function onWindowResize() {
 }
 
 function animate() {
-	requestAnimationFrame(animate);
+	requestAnimFrame(animate);
 	renderDesktop();
 }
 
