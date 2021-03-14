@@ -56,6 +56,7 @@ body {
 	-webkit-flex-direction: column;
 	flex-direction: column;
 	padding: 50% 2%;
+	text-align: center;
 }
 
 .intro {
@@ -341,9 +342,10 @@ figure {
 		align-content: center;
 		padding: 0px;
 
-		//-webkit-flex-flow: column wrap;
-		//flex-flow: column wrap;
-		flex-direction: row;
+		text-align: center;
+		-webkit-flex-flow: column wrap;
+		flex-flow: column wrap;
+		flex-direction: column;
 		z-index: 2;
 	}
 
